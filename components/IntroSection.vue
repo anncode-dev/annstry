@@ -58,10 +58,10 @@ onMounted(() => {
   const to = params.get('to')
   if (to) guestName.value = decodeURIComponent(to)
 
-  // Kunci scroll saat intro
-  document.body.classList.add('overflow-hidden')
+  // Lock scroll (html + body)
+  document.documentElement.classList.add('noscroll')
+  document.body.classList.add('noscroll')
 
-  // Show tombol setelah delay
   setTimeout(() => {
     show.value = true
   }, 500)
@@ -76,21 +76,18 @@ async function handleOpenInvitation() {
     console.warn('Autoplay gagal:', e)
   })
 
-  // Mulai fade out intro
   hideIntro.value = true
 
-  // Tunggu animasi fade out selesai (700ms)
   await new Promise((resolve) => setTimeout(resolve, 700))
 
-  // Hapus intro
   showIntro.value = false
 
   await nextTick()
 
-  // Buka scroll kembali
-  document.body.classList.remove('overflow-hidden')
+  // Unlock scroll
+  document.documentElement.classList.remove('noscroll')
+  document.body.classList.remove('noscroll')
 
-  // Scroll ke bagian #our-story
   const el = document.getElementById('our-story')
   if (el) el.scrollIntoView({ behavior: 'smooth' })
 
@@ -101,6 +98,12 @@ async function handleOpenInvitation() {
     }
   }, 600)
 }
-
-
 </script>
+
+<style>
+html.noscroll,
+body.noscroll {
+  overflow: hidden !important;
+  height: 100% !important;
+}
+</style>
