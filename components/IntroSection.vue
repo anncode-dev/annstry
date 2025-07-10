@@ -58,7 +58,10 @@ onMounted(() => {
   const to = params.get('to')
   if (to) guestName.value = decodeURIComponent(to)
 
-  // Show bottom tombol setelah delay
+  // Kunci scroll saat intro
+  document.body.classList.add('overflow-hidden')
+
+  // Show tombol setelah delay
   setTimeout(() => {
     show.value = true
   }, 500)
@@ -79,21 +82,25 @@ async function handleOpenInvitation() {
   // Tunggu animasi fade out selesai (700ms)
   await new Promise((resolve) => setTimeout(resolve, 700))
 
-  // Baru hilangkan intro dari DOM
+  // Hapus intro
   showIntro.value = false
 
   await nextTick()
 
+  // Buka scroll kembali
+  document.body.classList.remove('overflow-hidden')
+
   // Scroll ke bagian #our-story
   const el = document.getElementById('our-story')
-if (el) el.scrollIntoView({ behavior: 'smooth' })
+  if (el) el.scrollIntoView({ behavior: 'smooth' })
 
-setTimeout(() => {
-  if (window.AOS) {
-    window.AOS.refresh()
-    window.AOS.refreshHard()
-  }
-}, 600)
-
+  setTimeout(() => {
+    if (window.AOS) {
+      window.AOS.refresh()
+      window.AOS.refreshHard()
+    }
+  }, 600)
 }
+
+
 </script>
