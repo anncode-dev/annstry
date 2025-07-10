@@ -1,4 +1,4 @@
-<template>
+<template > 
     <section
       id="our-story"
       class="relative min-h-screen flex flex-col justify-between px-6 text-white"
@@ -48,7 +48,7 @@
     </section>
 
     <section class="bg-gradient-black-opacity py-16">
-      <div class="mb-10" >
+      <div class="mb-10" data-aos="fade-up">
         <p class="text-5xl text-center font-serif text-white/90 mt-2">The Bride</p>
         <hr class="w-24 mx-auto my-4 border-t-2 border-white/30" />
       </div>
@@ -135,7 +135,6 @@
         </div>
       </div>
       <button
-        @click="scrollTo('our-story')"
         class="bg-white/10 mt-5 backdrop-blur-sm border border-white text-white px-6 py-3 rounded-md font-semibold transition-transform hover:scale-105"
         data-aos="fade-in" data-aos-delay="200"
       >
@@ -168,7 +167,6 @@
         
       </div>
 <button
-        @click="scrollTo('our-story')"
         class="bg-white/10 mt-5 backdrop-blur-sm border border-white text-white px-6 py-3 rounded-md font-semibold transition-transform hover:scale-105"
         data-aos="fade-in" data-aos-delay="200"
       >
@@ -183,7 +181,6 @@
       Pernikahan kami dapat disaksikan secara langsung melalui tombol di bawah ini:
     </p>
     <button
-        @click="scrollTo('our-story')"
         class="bg-white/10 mt-5 backdrop-blur-sm border border-white text-white px-6 py-3 rounded-md font-semibold transition-transform hover:scale-105"
       >
         Live Streaming

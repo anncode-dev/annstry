@@ -11,12 +11,12 @@ import 'swiper/css/pagination'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-import { onMounted } from 'vue'
-
 onMounted(() => {
   AOS.init({
-    once: true, // animasi hanya sekali saat scroll
-    duration: 700,
-    easing: 'ease-in-out',
-  })
+  duration: 800,
+  once: false,
+  offset: -500,
+  easing: 'ease-in-out',
 })
+})
+

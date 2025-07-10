@@ -1,8 +1,53 @@
+<template>
+  <section
+    v-if="showIntro"
+    :class="['relative min-h-screen px-6 text-white overflow-hidden transition-opacity duration-700', { 'opacity-0 pointer-events-none': hideIntro }]"
+  >
+    <!-- Background -->
+    <div
+      class="absolute inset-0 bg-cover bg-center z-0"
+      :style="{
+        backgroundImage:
+          'url(https://plus.unsplash.com/premium_photo-1675851210836-e938be7d7508?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
+      }"
+    ></div>
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black opacity-40 z-10"></div>
+
+    <!-- Konten utama -->
+    <div class="relative z-20 flex flex-col h-full justify-between py-72">
+      <div class="text-center">
+        <div class="text-2xl font-light uppercase tracking-widest mb-2">
+          Save the Date
+        </div>
+        <p class="text-7xl text-white/90 mt-2">10 08 25</p>
+      </div>
+    </div>
+
+    <!-- Tamu + Tombol -->
+    <div
+      class="absolute bottom-28 left-0 right-0 text-center z-20 px-4 transition-opacity duration-500"
+      :class="{ 'opacity-100': show, 'opacity-0': !show }"
+    >
+      <p class="text-sm">Kepada Yth.</p>
+      <p class="text-lg font-semibold mb-4">{{ guestName }}</p>
+      <button
+        @click="handleOpenInvitation"
+        class="bg-white/10 backdrop-blur-sm border border-white text-white px-6 py-3 rounded-md font-semibold transition-transform hover:scale-105"
+      >
+        Buka Undangan
+      </button>
+    </div>
+  </section>
+</template>
+
 <script setup>
-import { ref, onMounted, watch, onBeforeUnmount } from 'vue'
+import { ref, nextTick, onMounted } from 'vue'
 
 const show = ref(false)
 const showIntro = ref(true)
+const hideIntro = ref(false)
 const guestName = ref('Tamu Undangan')
 const audio = ref(null)
 
@@ -12,26 +57,14 @@ onMounted(() => {
   const params = new URLSearchParams(window.location.search)
   const to = params.get('to')
   if (to) guestName.value = decodeURIComponent(to)
+
+  // Show bottom tombol setelah delay
   setTimeout(() => {
     show.value = true
-  }, 300)
-  // Disable scroll saat load hero
-  document.body.style.overflow = 'hidden'
+  }, 500)
 })
 
-watch(showIntro, (newVal) => {
-  if (newVal) {
-    document.body.style.overflow = 'hidden'
-  } else {
-    document.body.style.overflow = ''
-  }
-})
-
-onBeforeUnmount(() => {
-  document.body.style.overflow = ''
-})
-
-function handleOpenInvitation() {
+async function handleOpenInvitation() {
   if (!audio.value) {
     audio.value = new Audio(musicUrl)
     audio.value.loop = true
@@ -40,10 +73,27 @@ function handleOpenInvitation() {
     console.warn('Autoplay gagal:', e)
   })
 
-  // Scroll ke konten cerita
-  const el = document.getElementById('ourstory')
-  if (el) el.scrollIntoView({ behavior: 'smooth' })
+  // Mulai fade out intro
+  hideIntro.value = true
 
+  // Tunggu animasi fade out selesai (700ms)
+  await new Promise((resolve) => setTimeout(resolve, 700))
+
+  // Baru hilangkan intro dari DOM
   showIntro.value = false
+
+  await nextTick()
+
+  // Scroll ke bagian #our-story
+  const el = document.getElementById('our-story')
+if (el) el.scrollIntoView({ behavior: 'smooth' })
+
+setTimeout(() => {
+  if (window.AOS) {
+    window.AOS.refresh()
+    window.AOS.refreshHard()
+  }
+}, 600)
+
 }
 </script>
