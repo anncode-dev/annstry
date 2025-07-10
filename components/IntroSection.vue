@@ -16,7 +16,7 @@
     <div class="absolute inset-0 bg-black opacity-40 z-10"></div>
 
     <!-- Konten utama -->
-    <div class="relative z-20 flex flex-col h-full justify-between py-72">
+    <div class="relative z-20 flex flex-col h-full justify-between py-64">
       <div class="text-center">
         <div class="text-2xl font-light uppercase tracking-widest mb-2">
           Save the Date
@@ -27,16 +27,16 @@
 
     <!-- Tamu + Tombol -->
     <div
-      class="absolute bottom-28 left-0 right-0 text-center z-20 px-4 transition-opacity duration-500"
+      class="absolute bottom-40 left-0 right-0 text-center z-20 px-4 transition-opacity duration-500"
       :class="{ 'opacity-100': show, 'opacity-0': !show }"
     >
       <p class="text-sm">Kepada Yth.</p>
       <p class="text-lg font-semibold mb-4">{{ guestName }}</p>
       <button
         @click="handleOpenInvitation"
-        class="bg-white/10 backdrop-blur-sm border border-white text-white px-6 py-3 rounded-md font-semibold transition-transform hover:scale-105"
+        class="bg-white/10 backdrop-blur-sm border border-white text-white px-6 py-3 mt-5 rounded-md transition-transform hover:scale-105"
       >
-        Buka Undangan
+        BUKA UNDANGAN
       </button>
     </div>
   </section>

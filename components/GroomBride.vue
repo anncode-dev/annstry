@@ -70,7 +70,7 @@
 
     <!-- Wishess -->
      <div class="mt-10 max-w-xl mx-auto text-center" data-aos="fade-up">
-      <h2 class="text-3xl font-semibold text-white/80 mb-2">RSVP</h2>
+      <h2 class="text-3xl font-semibold text-white/80 mb-2">WISHESS</h2>
       <p class="text-white/70 mb-6 italic">
         Mohon kesediaannya untuk mengisi konfirmasi kehadiran di bawah ini.
       </p>

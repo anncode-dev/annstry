@@ -14,7 +14,7 @@
     <!-- Konten halaman -->
     <div class="relative z-10">
       <IntroSection id="intro" />
-      <OurStory id="our-story" />
+      <OurStory/>
       <Gallery id="gallery" />
       <GroomBride id="wedding-gif" />
       <FooterSection id="footer" />
@@ -39,12 +39,12 @@ const bgDefault = 'https://plus.unsplash.com/premium_photo-1675851210850-de55258
 
 onMounted(() => {
   AOS.init({
-    duration: 800,
-    once: true,
-    mirror: false, // jangan ulang animasi saat scroll balik
-  })
+  duration: 800,
+  once: false,
+  offset: -300,
+  easing: 'ease-in-out',
 })
-
+})
 </script>
 
 <style>

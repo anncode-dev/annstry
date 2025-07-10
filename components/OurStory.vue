@@ -34,7 +34,7 @@
 
         <div
           ref="titleRef"
-          class="relative max-w-2xl mx-auto px-6 pb-16 text-center transition-opacity duration-1000 opacity-0 z-20"
+          class="relative max-w-2xl mx-auto px-6 pb-40 text-center transition-opacity duration-1000 opacity-0 z-20"
           :class="{ 'opacity-100': visible }"
         >
           <p class="italic text-sm text-white/80">
@@ -49,22 +49,36 @@
 
     <section class="bg-gradient-black-opacity py-16">
       <div class="mb-10" data-aos="fade-up">
-        <p class="text-5xl text-center font-serif text-white/90 mt-2">The Bride</p>
+        <p class="text-5xl text-center  text-white/90 mt-2">THE BRIDE</p>
         <hr class="w-24 mx-auto my-4 border-t-2 border-white/30" />
       </div>
 
       <div class="relative z-20 flex flex-col items-start px-10 text-left">
-        <img
-          src="https://plus.unsplash.com/premium_photo-1675851210855-e7727076e829?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Julian Photo"
-          class="w-72 h-96 object-cover mb-6 border-b-4 border-white/50 shadow-lg"
-          data-aos="fade-left"
-        />
+        <!-- Bungkus gambar dan tombol dalam satu div relative -->
+        <div class="relative w-72 h-96 mb-6">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1675851210855-e7727076e829?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Julian Photo"
+            class="w-full h-full object-cover border-b-4 border-white/50 shadow-lg"
+            data-aos="fade-left"
+          />
+          <!-- Tombol absolute di kanan bawah -->
+          <button
+            class="absolute bottom-4 right-4 bg-white/10 backdrop-blur-sm border border-white text-white px-4 py-2 rounded-md text-sm font-semibold transition-transform hover:scale-105"
+            data-aos="fade-in"
+            data-aos-delay="200"
+          >
+            @mochJuhlian
+          </button>
+        </div>
+
+        <!-- Teks Deskripsi -->
         <div>
           <h3 class="text-3xl text-white font-serif font-semibold" data-aos="fade-left">Moch Julian Saputra</h3>
           <p class="text-sm text-white mt-2" data-aos="fade-left">Putra dari Bapak Fulan & Ibu Fulanah</p>
         </div>
       </div>
+
 
       <div class="relative z-20 flex justify-center py-8">
         <p class="text-7xl font-serif text-white font-semibold">&</p>
@@ -73,12 +87,22 @@
       <div class="relative z-20 flex flex-col items-end px-10 text-right">
         <h3 class="text-3xl text-white font-serif font-semibold" data-aos="fade-right">Azdra Lala</h3>
         <p class="text-sm text-white mt-2" data-aos="fade-right">Putri dari Bapak Fulan & Ibu Fulanah</p>
-        <img
-          src="https://plus.unsplash.com/premium_photo-1675851210855-e7727076e829?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Bride Photo"
-          class="w-72 h-96 object-cover mt-6 border-t-4 border-white/50 shadow-lg"
-          data-aos="fade-right"
-        />
+        <div class="relative w-72 h-96 mb-6">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1675851210855-e7727076e829?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Julian Photo"
+            class="w-full h-full object-cover border-b-4 border-white/50 shadow-lg"
+            data-aos="fade-left"
+          />
+          <!-- Tombol absolute di kanan bawah -->
+          <button
+            class="absolute bottom-4 right-4 bg-white/10 backdrop-blur-sm border border-white text-white px-4 py-2 rounded-md text-sm font-semibold transition-transform hover:scale-105"
+            data-aos="fade-in"
+            data-aos-delay="200"
+          >
+            @adzrlala
+          </button>
+        </div>
       </div>
       <div
       ref="countdownRef"
