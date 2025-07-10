@@ -41,7 +41,7 @@ onMounted(() => {
   AOS.init({
   duration: 800,
   once: false,
-  offset: -250,
+  offset: -100,
   easing: 'ease-in-out',
 })
 })
