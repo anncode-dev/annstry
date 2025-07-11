@@ -36,13 +36,13 @@
       class="absolute bottom-40 left-0 right-0 text-center z-20 px-4 transition-opacity duration-500"
       :class="{ 'opacity-100': show, 'opacity-0': !show }"
     >
-      <p class="text-base font-[dflt]">Kepada Yth.</p>
-      <p class="text-lg font-[dflt]  mb-4 ">{{ guestName }}</p>
+      <p class="text-base text-[#ffffff]  font-[dflt]">Kepada Yth.</p>
+      <p class="text-xl font-[dflt]  mt-2 mb-4 ">{{ guestName }}</p>
       <button
         @click="handleOpenInvitation"
-        class="bg-white/10 backdrop-blur-sm border border-white text-white px-6 py-3 mt-5 rounded-md transition-transform hover:scale-105"
+        class="bg-white/10 font-[dflt] backdrop-blur-sm border border-white text-white px-6 py-3 mt-5 rounded-md transition-transform text-xl hover:scale-105"
       >
-        BUKA UNDANGAN
+        Buka Undangan
       </button>
     </div>
   </section>
@@ -57,7 +57,7 @@ const hideIntro = ref(false)
 const guestName = ref('Tamu Undangan')
 const audio = ref(null)
 
-const musicUrl = '/music/music.mp3'
+const musicUrl = ''
 
 onMounted(() => {
   const params = new URLSearchParams(window.location.search)
@@ -114,8 +114,8 @@ body.noscroll {
 }
 .svg-text-outline {
     fill: none;
-    stroke: #cba07a;
-    stroke-width: 20;
+    stroke: #472f1a;
+    stroke-width: 18;
     font-size: 220px;
     font-family: 'SNPro', sans-serif;
     stroke-dasharray: 1000;

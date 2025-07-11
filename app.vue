@@ -1,20 +1,19 @@
 <template>
   <div class="relative mx-auto max-w-md min-h-screen font-sans text-gray-900 transition-bg duration-700">
-    <!-- Background fixed -->
+    <!-- Background slideshow -->
     <div
-      class="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
-      :style="{
-        backgroundImage: `url(${bgDefault})`,
-      }"
+      class="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
+      :style="{ backgroundImage: `url(${photos[currentIndex]})` }"
     ></div>
 
-    <!-- Overlay hitam transparan -->
-    <div class="fixed inset-0 -z-5 bg-black opacity-50"></div>
+    <!-- Overlay gelap -->
+    <div class="fixed inset-0 -z-5 bg-[#684438] opacity-40"></div>
+
 
     <!-- Konten halaman -->
     <div class="relative z-10">
       <IntroSection id="intro" />
-      <OurStory/>
+      <OurStory />
       <Gallery id="gallery" />
       <GroomBride id="wedding-gif" />
       <FooterSection id="footer" />
@@ -23,32 +22,42 @@
 </template>
 
 <script setup>
+import { onMounted, ref } from 'vue'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import { onMounted } from 'vue'
-
 
 import IntroSection from '@/components/IntroSection.vue'
 import OurStory from '@/components/OurStory.vue'
-import EventDetails from '@/components/EventDetails.vue'
-import MapLocation from '@/components/MapLocation.vue'
 import Gallery from '@/components/Gallery.vue'
+import GroomBride from '@/components/GroomBride.vue'
 import FooterSection from '@/components/FooterSection.vue'
 
-const bgDefault = 'https://plus.unsplash.com/premium_photo-1675851210850-de5525809dd9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+// Daftar foto slideshow
+const photos = ref([
+  'https://plus.unsplash.com/premium_photo-1675851211463-7b04cd066e10?q=80&w=687&auto=format&fit=crop',
+  'https://plus.unsplash.com/premium_photo-1675851211519-fc13d860e103?q=80&w=687&auto=format&fit=crop',
+  'https://plus.unsplash.com/premium_photo-1675851211768-f8b9296ed7bd?q=80&w=687&auto=format&fit=crop',
+])
+
+const currentIndex = ref(0)
 
 onMounted(() => {
   AOS.init({
-  duration: 800,
-  once: false,
-  offset: -100,
-  easing: 'ease-in-out',
-})
+    duration: 800,
+    once: false,
+    offset: -100,
+    easing: 'ease-in-out',
+  })
+
+  // Slideshow otomatis setiap 5 detik
+  setInterval(() => {
+    currentIndex.value = (currentIndex.value + 1) % photos.value.length
+  }, 5000)
 })
 </script>
 
 <style>
 .transition-bg {
-  transition: background-image 0.7s ease-in-out;
+  transition: background-image 0.1s ease-in-out;
 }
 </style>

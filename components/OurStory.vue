@@ -1,51 +1,32 @@
 <template > 
     <section
       id="our-story"
-      class="relative min-h-screen flex flex-col justify-between px-6 text-white"
-      style="background-color: #000"
+      class="relative min-h-screen flex flex-col justify-between items-center px-6 py-10 text-white text-center"
     >
-        <div class="relative z-20 flex flex-col h-full justify-between py-20"></div>
-        <div
-          v-for="(photo, index) in photos"
-          :key="index"
-          class="absolute inset-0 transition-opacity duration-1000"
-          :class="{
-            'opacity-100': currentIndex === index,
-            'opacity-0 pointer-events-none': currentIndex !== index
-          }"
-        >
-          <img
-            :src="photo"
-            alt="Gallery photo"
-            class="w-full h-full object-cover rounded-lg select-none"
-            draggable="false"
-          />
-          <!-- Overlay hitam tipis supaya kontras -->
-          <div class="absolute inset-0 bg-black bg-opacity-40 rounded-lg"></div>
-        </div>
-        
-        <div class="absolute top-6 right-6 text-right z-30">
-          <div class="text-6xl   leading-tight">
-            <p class="mb-0">LALA</p>
-            <p class="mb-2">JULIAN</p>
-          </div>
-          <p class="text-sm text-white/90">10 AGUSTUS 2025</p>
-        </div>
+      <!-- Bagian Atas (misalnya Logo, tanggal, dll jika perlu) -->
+      <div class="mt-10">
+        <h2 class="text-2xl font-semibold font-[dflt]">The Wedding Of</h2>
+      </div>
 
-        <div
-          ref="titleRef"
-          class="relative max-w-2xl mx-auto px-6 pb-40 text-center transition-opacity duration-1000 opacity-0 z-20"
-          :class="{ 'opacity-100': visible }"
-        >
-          <p class="italic text-sm text-white/80">
-            “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan
-            untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya,
-            dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu
-            benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.”<br />
-            <span class="mt-2 block font-medium">— QS. Ar-Rum: 21</span>
-          </p>
-        </div>
+      <!-- Bagian Tengah -->
+      <div class="">
+        <p class="mr-20 text-7xl font-[SNPro]">Sarah</p>
+        <p class="text-3xl mb-6 font-[dflt]">&</p>
+        <p class="ml-16 text-7xl font-[SNPro]">Wendi</p>
+        <p class="italic text-sm text-white max-w-xl mx-auto mt-20">
+          “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan
+          untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya,
+          dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu
+          benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.”
+          <br />
+          <span class="mt-2 block font-medium">— QS. Ar-Rum: 21</span>
+        </p>
+      </div>
+
+      <!-- Bagian Bawah (kosong untuk beri ruang) -->
+      <div class="mb-10"></div>
     </section>
+
 
     <section class="bg-gradient-black-opacity py-16">
       <div class="mb-10" data-aos="fade-up">
