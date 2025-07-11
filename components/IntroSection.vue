@@ -8,30 +8,36 @@
       class="absolute inset-0 bg-cover bg-center z-0"
       :style="{
         backgroundImage:
-          'url(https://plus.unsplash.com/premium_photo-1675851210836-e938be7d7508?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
+          'url(https://plus.unsplash.com/premium_photo-1664297810872-416e0f317622?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
       }"
     ></div>
 
     <!-- Overlay -->
-    <div class="absolute inset-0 bg-black opacity-40 z-10"></div>
+    <div class="absolute inset-0 bg-[#684438] opacity-40 z-10"></div>
 
     <!-- Konten utama -->
-    <div class="relative z-20 flex flex-col h-full justify-between py-64">
-      <div class="text-center">
-        <div class="text-2xl font-light uppercase tracking-widest mb-2">
-          Save the Date
-        </div>
-        <p class="text-7xl text-white/90 mt-2">10 08 25</p>
-      </div>
-    </div>
+   
+
+    <div class="relative z-20 flex flex-col  justify-between py-64">
+  <!-- Outline + Isi teks -->
+  <svg viewBox="0 -220 1200 1190" class="w-full  z-20">
+    <!-- Sarah -->
+    <text x="250" y="50" class="svg-text-outline">Sarah</text>
+    <text x="250" y="50" class="svg-text-fill">Sarah</text>
+
+    <!-- Wendi -->
+    <text x="480" y="330" class="svg-text-outline">Wendi</text>
+    <text x="480" y="330" class="svg-text-fill">Wendi</text>
+  </svg>
+</div>
 
     <!-- Tamu + Tombol -->
     <div
       class="absolute bottom-40 left-0 right-0 text-center z-20 px-4 transition-opacity duration-500"
       :class="{ 'opacity-100': show, 'opacity-0': !show }"
     >
-      <p class="text-sm">Kepada Yth.</p>
-      <p class="text-lg font-semibold mb-4">{{ guestName }}</p>
+      <p class="text-base font-[dflt]">Kepada Yth.</p>
+      <p class="text-lg font-[dflt]  mb-4 ">{{ guestName }}</p>
       <button
         @click="handleOpenInvitation"
         class="bg-white/10 backdrop-blur-sm border border-white text-white px-6 py-3 mt-5 rounded-md transition-transform hover:scale-105"
@@ -106,4 +112,30 @@ body.noscroll {
   overflow: hidden !important;
   height: 100% !important;
 }
+.svg-text-outline {
+    fill: none;
+    stroke: #cba07a;
+    stroke-width: 20;
+    font-size: 220px;
+    font-family: 'SNPro', sans-serif;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+    animation: drawText 3s linear infinite;
+  }
+
+  .svg-text-fill {
+    fill: white;
+    stroke: none;
+    font-size: 220px;
+    font-family: 'SNPro', sans-serif;
+  }
+
+  @keyframes drawText {
+    0% {
+      stroke-dashoffset: 1000;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
 </style>

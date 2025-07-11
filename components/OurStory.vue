@@ -25,7 +25,7 @@
         </div>
         
         <div class="absolute top-6 right-6 text-right z-30">
-          <div class="text-6xl font-serif leading-tight">
+          <div class="text-6xl   leading-tight">
             <p class="mb-0">LALA</p>
             <p class="mb-2">JULIAN</p>
           </div>
@@ -74,18 +74,18 @@
 
         <!-- Teks Deskripsi -->
         <div>
-          <h3 class="text-3xl text-white font-serif font-semibold" data-aos="fade-left">Moch Julian Saputra</h3>
+          <h3 class="text-3xl text-white   font-semibold" data-aos="fade-left">Moch Julian Saputra</h3>
           <p class="text-sm text-white mt-2" data-aos="fade-left">Putra dari Bapak Fulan & Ibu Fulanah</p>
         </div>
       </div>
 
 
       <div class="relative z-20 flex justify-center py-8">
-        <p class="text-7xl font-serif text-white font-semibold">&</p>
+        <p class="text-7xl   text-white font-semibold">&</p>
       </div>
 
       <div class="relative z-20 flex flex-col items-end px-10 text-right">
-        <h3 class="text-3xl text-white font-serif font-semibold" data-aos="fade-right">Azdra Lala</h3>
+        <h3 class="text-3xl text-white   font-semibold" data-aos="fade-right">Azdra Lala</h3>
         <p class="text-sm text-white mt-2" data-aos="fade-right">Putri dari Bapak Fulan & Ibu Fulanah</p>
         <div class="relative w-72 h-96 mb-6">
           <img
@@ -131,7 +131,7 @@
         </div>
       </div>
       <div class="flex flex-col items-center">
-  <p class="text-2xl text-center font-serif text-white/90" data-aos="zoom-in">Save The Date</p>
+  <p class="text-2xl text-center   text-white/90" data-aos="zoom-in">Save The Date</p>
   <div class="w-px h-20 bg-white/80 mt-4"></div>
 </div>
 

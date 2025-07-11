@@ -3,7 +3,7 @@
     id="event-details"
     class="min-h-screen px-6 max-w-3xl mx-auto flex flex-col justify-center"
   >
-    <h2 class="text-4xl font-serif mb-8 text-center">Detail Acara</h2>
+    <h2 class="text-4xl   mb-8 text-center">Detail Acara</h2>
     <div class="space-y-6">
       <div class="flex items-center space-x-4">
         <div class="w-12 h-12 bg-pink-400 text-white rounded-full flex items-center justify-center font-semibold">Akad</div>

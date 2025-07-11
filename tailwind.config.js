@@ -35,7 +35,7 @@ export default {
       },
       animation: {
         zoomOut: 'zoomOut 1s ease-out'
-      }
+      },
     },
 
   },

@@ -4,7 +4,7 @@
     class="max-w-md mx-auto px-4 mt-10"
     data-aos="fade-up"
   >
-    <h2 class="text-3xl font-serif mb-6 text-white text-center">Galeri</h2>
+    <h2 class="text-3xl   mb-6 text-white text-center">Galeri</h2>
     <swiper
       :modules="[Autoplay, Pagination]"
       :slides-per-view="2.8"

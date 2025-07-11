@@ -4,16 +4,16 @@
 
 @font-face {
   font-family: "SNPro";
-  src: url(/fonts/Poppins-Regular.ttf) format("truetype");
+  src: url(/fonts/Mistrully.ttf) format("truetype");
 }
 @font-face {
-  font-family: "PoppinsBold";
-  src: url(/fonts/Poppins-Bold.ttf) format("truetype");
+  font-family: "dflt";
+  src: url(/fonts/CrimsonText-Regular.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "Header";
-  src: url(/fonts/Poppins-Regular.ttf) format("truetype");
+  src: url(/fonts/Allura-Regular.ttf) format("truetype");
 }
 
 @font-face {
@@ -23,7 +23,7 @@
 
 
 body {
-  font-family: "SNPro";
+  font-family: "Header";
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
