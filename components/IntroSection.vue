@@ -16,16 +16,18 @@
     <div class="absolute inset-0 bg-black opacity-40 z-10"></div>
 
     <!-- Konten utama -->
-    <div class="relative z-20 flex flex-col h-full justify-between py-52">
-      <div class="text-center">
-        <div class="mr-24 text-7xl mb-2 font-[SNPro]">
-          Siti
-        </div>
-        <div class="ml-24 text-7xl mb-2 font-[SNPro]">
-          Apip
-        </div>
-      </div>
-    </div>
+    <div class="relative z-20 flex flex-col  justify-between py-40">
+  <!-- Outline + Isi teks -->
+  <svg viewBox="0 -220 1200 1190" class="w-full  z-20">
+    <!-- Sarah -->
+    <!-- <text x="160" y="50" class="svg-text-outline">Sarah</text> -->
+    <text x="160" y="50" class="svg-text-fill">Sarah</text>
+
+    <!-- Wendi -->
+    <!-- <text x="435" y="330" class="svg-text-outline">Wendi</text> -->
+    <text x="435" y="330" class="svg-text-fill">Wendi</text>
+  </svg>
+</div>
 
     <!-- Tamu + Tombol -->
     <div
@@ -36,9 +38,9 @@
       <p class="text-2xl font-semibold mt-2 mb-4 font-[txt]">{{ guestName }}</p>
       <button
         @click="handleOpenInvitation"
-        class="bg-white/10 backdrop-blur-sm border border-white text-white px-6 py-3 mt-5 rounded-md transition-transform hover:scale-105"
+        class="bg-white/10 backdrop-blur-sm text-base border border-white text-white px-6 py-3 mt-5 rounded-md transition-transform hover:scale-105 font-[txt]"
       >
-        BUKA UNDANGAN
+        Buka Undangan
       </button>
     </div>
   </section>
@@ -108,4 +110,31 @@ body.noscroll {
   overflow: hidden !important;
   height: 100% !important;
 }
+
+.svg-text-outline {
+    fill: none;
+    stroke: #472f1a;
+    stroke-width: 18;
+    font-size: 280px;
+    font-family: 'SNPro', sans-serif;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+    animation: drawText 3s  infinite;
+  }
+
+  .svg-text-fill {
+    fill: white;
+    stroke: none;
+    font-size: 280px;
+    font-family: 'SNPro', sans-serif;
+  }
+
+  @keyframes drawText {
+    0% {
+      stroke-dashoffset: 2000;
+    }
+    100% {
+      stroke-dashoffset: 100;
+    }
+  }
 </style>
