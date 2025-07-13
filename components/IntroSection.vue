@@ -18,10 +18,12 @@
     <!-- Konten utama -->
     <div class="relative z-20 flex flex-col h-full justify-between py-64">
       <div class="text-center">
-        <div class="text-2xl font-light uppercase tracking-widest mb-2">
-          Save the Date
+        <div class="mr-20 text-7xl mb-2 font-[SNPro]">
+          Sandrina
         </div>
-        <p class="text-7xl text-white/90 mt-2">10 08 25</p>
+        <div class="ml-24 text-7xl mb-2 font-[SNPro]">
+          Nandang
+        </div>
       </div>
     </div>
 
