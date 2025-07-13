@@ -8,7 +8,7 @@
       class="absolute inset-0 bg-cover bg-center z-0"
       :style="{
         backgroundImage:
-          'url(https://plus.unsplash.com/premium_photo-1675851210836-e938be7d7508?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
+          'url(https://plus.unsplash.com/premium_photo-1675851211585-4f9b81996cc3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
       }"
     ></div>
 
@@ -16,13 +16,13 @@
     <div class="absolute inset-0 bg-black opacity-40 z-10"></div>
 
     <!-- Konten utama -->
-    <div class="relative z-20 flex flex-col h-full justify-between py-64">
+    <div class="relative z-20 flex flex-col h-full justify-between py-52">
       <div class="text-center">
-        <div class="mr-20 text-7xl mb-2 font-[SNPro]">
-          Sandrina
+        <div class="mr-24 text-7xl mb-2 font-[SNPro]">
+          Siti
         </div>
         <div class="ml-24 text-7xl mb-2 font-[SNPro]">
-          Nandang
+          Apip
         </div>
       </div>
     </div>
@@ -32,8 +32,8 @@
       class="absolute bottom-40 left-0 right-0 text-center z-20 px-4 transition-opacity duration-500"
       :class="{ 'opacity-100': show, 'opacity-0': !show }"
     >
-      <p class="text-sm">Kepada Yth.</p>
-      <p class="text-lg font-semibold mb-4">{{ guestName }}</p>
+      <p class="text-lg font-[txt]">Kepada Yth.</p>
+      <p class="text-2xl font-semibold mt-2 mb-4 font-[txt]">{{ guestName }}</p>
       <button
         @click="handleOpenInvitation"
         class="bg-white/10 backdrop-blur-sm border border-white text-white px-6 py-3 mt-5 rounded-md transition-transform hover:scale-105"
@@ -53,7 +53,7 @@ const hideIntro = ref(false)
 const guestName = ref('Tamu Undangan')
 const audio = ref(null)
 
-const musicUrl = '/music/music.mp3'
+// const musicUrl = '/music/music.mp3'
 
 onMounted(() => {
   const params = new URLSearchParams(window.location.search)
