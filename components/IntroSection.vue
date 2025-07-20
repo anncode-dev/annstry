@@ -3,44 +3,27 @@
     v-if="showIntro"
     :class="['relative min-h-screen px-6 text-white overflow-hidden transition-opacity duration-700', { 'opacity-0 pointer-events-none': hideIntro }]"
   >
-    <!-- Background -->
+    <video
+      ref="bgVideo"
+      autoplay
+      muted
+      playsinline
+      class="absolute top-0 left-0 w-full h-full object-cover"
+    >
+      <source src="/video/IntorSection.MP4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+
     <div
-      class="absolute inset-0 bg-cover bg-center z-0"
-      :style="{
-        backgroundImage:
-          'url(https://plus.unsplash.com/premium_photo-1664297810872-416e0f317622?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
-      }"
-    ></div>
-
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-[#684438] opacity-40 z-10"></div>
-
-    <!-- Konten utama -->
-   
-
-    <div class="relative z-20 flex flex-col  justify-between py-64">
-  <!-- Outline + Isi teks -->
-  <svg viewBox="0 -220 1200 1190" class="w-full  z-20">
-    <!-- Sarah -->
-    <text x="250" y="50" class="svg-text-outline">Sarah</text>
-    <text x="250" y="50" class="svg-text-fill">Sarah</text>
-
-    <!-- Wendi -->
-    <text x="480" y="330" class="svg-text-outline">Wendi</text>
-    <text x="480" y="330" class="svg-text-fill">Wendi</text>
-  </svg>
-</div>
-
-    <!-- Tamu + Tombol -->
-    <div
-      class="absolute bottom-40 left-0 right-0 text-center z-20 px-4 transition-opacity duration-500"
+      class="absolute bottom-28 left-0 right-0 text-center z-20 px-4 transition-opacity duration-500"
       :class="{ 'opacity-100': show, 'opacity-0': !show }"
     >
-      <p class="text-base text-[#ffffff]  font-[dflt]">Kepada Yth.</p>
-      <p class="text-xl font-[dflt]  mt-2 mb-4 ">{{ guestName }}</p>
+      <p class="text-base font-[txt]">Kepada Yth.</p>
+      <p class="text-xl font-semibold mt-2 font-[txt]">{{ guestName }}</p>
       <button
         @click="handleOpenInvitation"
-        class="bg-white/10 font-[dflt] backdrop-blur-sm border border-white text-white px-6 py-3 mt-5 rounded-md transition-transform text-xl hover:scale-105"
+        class="bg-white/10 backdrop-blur-sm text-sm border border-white text-white px-6 py-3 mt-5 rounded-md transition-transform hover:scale-105 font-[txt]"
       >
         Buka Undangan
       </button>
@@ -57,7 +40,7 @@ const hideIntro = ref(false)
 const guestName = ref('Tamu Undangan')
 const audio = ref(null)
 
-const musicUrl = ''
+const musicUrl = '/music/music.mp3'
 
 onMounted(() => {
   const params = new URLSearchParams(window.location.search)
@@ -112,30 +95,31 @@ body.noscroll {
   overflow: hidden !important;
   height: 100% !important;
 }
+
 .svg-text-outline {
     fill: none;
     stroke: #472f1a;
     stroke-width: 18;
-    font-size: 220px;
+    font-size: 280px;
     font-family: 'SNPro', sans-serif;
     stroke-dasharray: 1000;
     stroke-dashoffset: 0;
-    animation: drawText 3s linear infinite;
+    animation: drawText 3s  infinite;
   }
 
   .svg-text-fill {
     fill: white;
     stroke: none;
-    font-size: 220px;
+    font-size: 280px;
     font-family: 'SNPro', sans-serif;
   }
 
   @keyframes drawText {
     0% {
-      stroke-dashoffset: 1000;
+      stroke-dashoffset: 2000;
     }
     100% {
-      stroke-dashoffset: 0;
+      stroke-dashoffset: 100;
     }
   }
 </style>

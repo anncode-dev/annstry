@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "SNPro";
+  font-family: "hdr";
   src: url(/fonts/Mistrully.ttf) format("truetype");
 }
 @font-face {
-  font-family: "dflt";
+  font-family: "txt";
   src: url(/fonts/Merienda-VariableFont_wght.ttf) format("truetype");
 }
 
@@ -23,7 +23,7 @@
 
 
 body {
-  font-family: "Header";
+  font-family: "hdr";
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
