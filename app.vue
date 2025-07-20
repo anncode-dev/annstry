@@ -1,15 +1,5 @@
 <template>
   <div class="relative mx-auto max-w-md min-h-screen font-sans text-gray-900 transition-bg duration-700">
-    <!-- Background slideshow -->
-    <div
-      class="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
-      :style="{ backgroundImage: `url(${photos[currentIndex]})` }"
-    ></div>
-
-    <!-- Overlay gelap -->
-    <div class="fixed inset-0 -z-5 bg-[#684438] opacity-40"></div>
-
-
     <!-- Konten halaman -->
     <div class="relative z-10">
       <IntroSection id="intro" />

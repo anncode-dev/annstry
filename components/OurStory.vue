@@ -1,244 +1,206 @@
-<template > 
-    <section
-      id="our-story"
-      class="relative min-h-screen flex flex-col justify-between items-center px-6 py-10 text-white text-center"
+<template>
+  <!-- SECTION: VIDEO INTRO -->
+  <section
+    class="relative min-h-screen px-6 text-white overflow-hidden transition-opacity duration-700
+  "
+  >
+    <video
+      ref="bgVideo"
+      autoplay
+      muted
+      playsinline
+      class="absolute top-0 left-0 w-full h-full object-cover"
     >
-      <!-- Bagian Atas (misalnya Logo, tanggal, dll jika perlu) -->
-      <div class="mt-10">
-        <h2 class="text-2xl font-semibold font-[dflt]">The Wedding Of</h2>
+      <source src="/video/OurStory-One.MP4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </section>
+  <section
+    class="relative min-h-screen px-6 text-white overflow-hidden transition-opacity duration-700
+  "
+  >
+    <video
+      ref="bgVideo"
+      autoplay
+      muted
+      playsinline
+      class="absolute top-0 left-0 w-full h-full object-cover"
+    >
+      <source src="/video/OurStory-Two.MP4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <!-- SECTION: BRIDE & GROOM -->
+  <section class="bg-gradient-black-opacity py-16">
+    <div class="mb-10" data-aos="fade-up">
+      <p class="text-5xl text-center text-white/90 mt-2">THE BRIDE</p>
+      <hr class="w-24 mx-auto my-4 border-t-2 border-white/30" />
+    </div>
+
+    <!-- Profile Groom -->
+    <div class="relative z-20 flex flex-col items-start px-10 text-left">
+      <div class="relative w-72 h-96 mb-6">
+        <img
+          src="https://plus.unsplash.com/premium_photo-1675851210855-e7727076e829?q=80&w=687"
+          alt="Julian Photo"
+          class="w-full h-full object-cover border-b-4 border-white/50 shadow-lg"
+          data-aos="fade-left"
+        />
+        <button
+          class="absolute bottom-4 right-4 bg-white/10 backdrop-blur-sm border border-white text-white px-4 py-2 rounded-md text-sm font-semibold transition-transform hover:scale-105"
+          data-aos="fade-in"
+          data-aos-delay="200"
+        >
+          @mochJuhlian
+        </button>
       </div>
 
-      <!-- Bagian Tengah -->
-      <div class="">
-        <p class="mr-20 text-7xl font-[SNPro]">Sarah</p>
-        <p class="text-3xl mb-6 font-[dflt]">&</p>
-        <p class="ml-16 text-7xl font-[SNPro]">Wendi</p>
-        <p class="italic text-sm text-white max-w-xl mx-auto mt-20">
-          “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan
-          untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya,
-          dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu
-          benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.”
-          <br />
-          <span class="mt-2 block font-medium">— QS. Ar-Rum: 21</span>
+      <div>
+        <h3 class="text-3xl text-white font-semibold" data-aos="fade-left">
+          Moch Julian Saputra
+        </h3>
+        <p class="text-sm text-white mt-2" data-aos="fade-left">
+          Putra dari Bapak Fulan & Ibu Fulanah
         </p>
       </div>
+    </div>
 
-      <!-- Bagian Bawah (kosong untuk beri ruang) -->
-      <div class="mb-10"></div>
-    </section>
+    <!-- & Separator -->
+    <div class="relative z-20 flex justify-center py-8">
+      <p class="text-7xl text-white font-semibold">&</p>
+    </div>
 
+    <!-- Profile Bride -->
+    <div class="relative z-20 flex flex-col items-end px-10 text-right">
+      <h3 class="text-3xl text-white font-semibold" data-aos="fade-right">
+        Azdra Lala
+      </h3>
+      <p class="text-sm text-white mt-2" data-aos="fade-right">
+        Putri dari Bapak Fulan & Ibu Fulanah
+      </p>
+      <div class="relative w-72 h-96 mb-6">
+        <img
+          src="https://plus.unsplash.com/premium_photo-1675851210855-e7727076e829?q=80&w=687"
+          alt="Lala Photo"
+          class="w-full h-full object-cover border-b-4 border-white/50 shadow-lg"
+          data-aos="fade-right"
+        />
+        <button
+          class="absolute bottom-4 right-4 bg-white/10 backdrop-blur-sm border border-white text-white px-4 py-2 rounded-md text-sm font-semibold transition-transform hover:scale-105"
+          data-aos="fade-in"
+          data-aos-delay="200"
+        >
+          @adzrlala
+        </button>
+      </div>
+    </div>
 
-    <section class="bg-gradient-black-opacity py-16">
-      <div class="mb-10" data-aos="fade-up">
-        <p class="text-5xl text-center  text-white/90 mt-2">THE BRIDE</p>
+    <!-- SECTION: COUNTDOWN -->
+    <div ref="countdownRef" class="countdown pt-20 mb-10">
+      <div data-aos="zoom-in">
+        <p class="text-4xl text-center text-white/90">COUNTDOWN</p>
         <hr class="w-24 mx-auto my-4 border-t-2 border-white/30" />
       </div>
 
-      <div class="relative z-20 flex flex-col items-start px-10 text-left">
-        <!-- Bungkus gambar dan tombol dalam satu div relative -->
-        <div class="relative w-72 h-96 mb-6">
-          <img
-            src="https://plus.unsplash.com/premium_photo-1675851210855-e7727076e829?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Julian Photo"
-            class="w-full h-full object-cover border-b-4 border-white/50 shadow-lg"
-            data-aos="fade-left"
-          />
-          <!-- Tombol absolute di kanan bawah -->
-          <button
-            class="absolute bottom-4 right-4 bg-white/10 backdrop-blur-sm border border-white text-white px-4 py-2 rounded-md text-sm font-semibold transition-transform hover:scale-105"
-            data-aos="fade-in"
-            data-aos-delay="200"
-          >
-            @mochJuhlian
-          </button>
-        </div>
-
-        <!-- Teks Deskripsi -->
-        <div>
-          <h3 class="text-3xl text-white   font-semibold" data-aos="fade-left">Moch Julian Saputra</h3>
-          <p class="text-sm text-white mt-2" data-aos="fade-left">Putra dari Bapak Fulan & Ibu Fulanah</p>
-        </div>
-      </div>
-
-
-      <div class="relative z-20 flex justify-center py-8">
-        <p class="text-7xl   text-white font-semibold">&</p>
-      </div>
-
-      <div class="relative z-20 flex flex-col items-end px-10 text-right">
-        <h3 class="text-3xl text-white   font-semibold" data-aos="fade-right">Azdra Lala</h3>
-        <p class="text-sm text-white mt-2" data-aos="fade-right">Putri dari Bapak Fulan & Ibu Fulanah</p>
-        <div class="relative w-72 h-96 mb-6">
-          <img
-            src="https://plus.unsplash.com/premium_photo-1675851210855-e7727076e829?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Julian Photo"
-            class="w-full h-full object-cover border-b-4 border-white/50 shadow-lg"
-            data-aos="fade-left"
-          />
-          <!-- Tombol absolute di kanan bawah -->
-          <button
-            class="absolute bottom-4 right-4 bg-white/10 backdrop-blur-sm border border-white text-white px-4 py-2 rounded-md text-sm font-semibold transition-transform hover:scale-105"
-            data-aos="fade-in"
-            data-aos-delay="200"
-          >
-            @adzrlala
-          </button>
-        </div>
-      </div>
       <div
-      ref="countdownRef"
-      class="countdown pt-20 mb-10 "
-    >
-      <div class="">
-        <p class="text-4xl text-center text-white/90" data-aos="zoom-in">COUNTDOWN</p>
-        <hr class="w-24 mx-auto my-4 border-t-2 border-white/30" data-aos="zoom-in" />
-      </div>
-      <div class="flex justify-center space-x-6 mb-8  bg-white/10 mt-5 backdrop-blur-sm border border-white text-white  py-3  font-semibold transition-transform hover:scale-105" data-aos="zoom-in">
-        <div class="text-center ">
-          <p class="text-6xl text-white font-bold">{{ days }}</p>
+        class="flex justify-center space-x-6 mt-5 mb-8 bg-white/10 backdrop-blur-sm border border-white text-white py-3 font-semibold transition-transform hover:scale-105"
+        data-aos="zoom-in"
+      >
+        <div class="text-center">
+          <p class="text-6xl font-bold">{{ days }}</p>
           <p class="text-sm text-white/80">Days</p>
         </div>
         <div class="text-center">
-          <p class="text-6xl  text-white font-bold">{{ hours }}</p>
+          <p class="text-6xl font-bold">{{ hours }}</p>
           <p class="text-sm text-white/80">Hours</p>
         </div>
         <div class="text-center">
-          <p class="text-6xl text-white font-bold">{{ minutes }}</p>
+          <p class="text-6xl font-bold">{{ minutes }}</p>
           <p class="text-sm text-white/80">Minutes</p>
         </div>
         <div class="text-center">
-          <p class="text-6xl text-white font-bold">{{ seconds }}</p>
+          <p class="text-6xl font-bold">{{ seconds }}</p>
           <p class="text-sm text-white/80">Seconds</p>
         </div>
       </div>
+
       <div class="flex flex-col items-center">
-  <p class="text-2xl text-center   text-white/90" data-aos="zoom-in">Save The Date</p>
-  <div class="w-px h-20 bg-white/80 mt-4"></div>
-</div>
-
+        <p class="text-2xl text-white/90" data-aos="zoom-in">Save The Date</p>
+        <div class="w-px h-20 bg-white/80 mt-4"></div>
+      </div>
     </div>
 
-    <div class="px-8">
-      <div class="flex-1 text-left">
-      <p class="text-4xl font-bold mb-4 text-white/90" data-aos="fade-left">AKAD NIKAH</p>
-      <div class="flex items-center text-white/80 space-x-6" data-aos="fade-in" data-aos-delay="100">
-        <p class="text-2xl text-left font-semibold leading-tight">
-          10 <br />
-          AGUSTUS <br />
-          2025
-        </p>
-        
-        <div class="border-l border-white/50 h-16"></div>
-        
-        <div>
-          <p class="text-sm font-semibold">Pukul 09.00 WIB</p>
-          <div class="mt-1 text-sm text-white/80">
-            Bertempat di <br>
-            Gedung Serbaguna Jakarta <br>
-            Jl. Raya Jakarta No. 123 <br>
+    <!-- SECTION: AKAD & RESEPSI -->
+    <div class="px-8 flex flex-col md:flex-row justify-between space-y-20 md:space-y-0">
+      <!-- Akad -->
+      <div class="flex-1 text-left" data-aos="fade-left">
+        <p class="text-4xl font-bold mb-4 text-white/90">AKAD NIKAH</p>
+        <div class="flex items-center text-white/80 space-x-6">
+          <p class="text-2xl font-semibold leading-tight">
+            10 <br /> AGUSTUS <br /> 2025
+          </p>
+          <div class="border-l border-white/50 h-16"></div>
+          <div>
+            <p class="text-sm font-semibold">Pukul 09.00 WIB</p>
+            <p class="mt-1 text-sm">Gedung Serbaguna Jakarta<br />Jl. Raya Jakarta No. 123</p>
           </div>
         </div>
+        <button class="bg-white/10 mt-5 backdrop-blur-sm border border-white text-white px-6 py-3 rounded-md font-semibold hover:scale-105">
+          Google Maps
+        </button>
       </div>
-      <button
-        class="bg-white/10 mt-5 backdrop-blur-sm border border-white text-white px-6 py-3 rounded-md font-semibold transition-transform hover:scale-105"
-        data-aos="fade-in" data-aos-delay="200"
-      >
-        Google Maps
-      </button>
-    </div>
 
-    <!-- Resepsi - kanan -->
-    <div class="flex-1 text-right mt-20">
-      
-      <p class="text-4xl font-bold mb-4 text-white/90" data-aos="fade-right">RESEPSI</p>
-      <div class="flex items-end text-white/80 space-x-8" data-aos="fade-in" data-aos-delay="100">
-        <div>
-          <p class="text-sm font-semibold">Pukul 09.00 WIB</p>
-          <div class="mt-1 text-sm text-white/80">
-            Bertempat di <br>
-            Gedung Serbaguna Jakarta <br>
-            Jl. Raya Jakarta No. 123 <br>
+      <!-- Resepsi -->
+      <div class="flex-1 text-right" data-aos="fade-right">
+        <p class="text-4xl font-bold mb-4 text-white/90">RESEPSI</p>
+        <div class="flex items-end text-white/80 space-x-8">
+          <div>
+            <p class="text-sm font-semibold">Pukul 11.00 WIB</p>
+            <p class="mt-1 text-sm">Gedung Serbaguna Jakarta<br />Jl. Raya Jakarta No. 123</p>
           </div>
+          <div class="border-l border-white/50 h-16"></div>
+          <p class="text-2xl font-semibold leading-tight">
+            10 <br /> AGUSTUS <br /> 2025
+          </p>
         </div>
-        <div class="border-l border-white/50 h-16"></div>
-
-        <p class="text-2xl text-right font-semibold leading-tight">
-          10 <br />
-          AGUSTUS <br />
-          2025
-        </p>
-        
-        
-        
+        <button class="bg-white/10 mt-5 backdrop-blur-sm border border-white text-white px-6 py-3 rounded-md font-semibold hover:scale-105">
+          Google Maps
+        </button>
       </div>
-<button
-        class="bg-white/10 mt-5 backdrop-blur-sm border border-white text-white px-6 py-3 rounded-md font-semibold transition-transform hover:scale-105"
-        data-aos="fade-in" data-aos-delay="200"
-      >
-        Google Maps
-      </button>
-    </div>
     </div>
 
+    <!-- SECTION: LIVE STREAMING -->
     <div class="mb-12 text-center mt-32 px-8" data-aos="fade-up">
-    <h2 class="text-3xl font-semibold text-white/80 mb-2">JOIN LIVE STREAMING</h2>
-    <p class="text-white/70 max-w-xl mx-auto italic">
-      Pernikahan kami dapat disaksikan secara langsung melalui tombol di bawah ini:
-    </p>
-    <button
-        class="bg-white/10 mt-5 backdrop-blur-sm border border-white text-white px-6 py-3 rounded-md font-semibold transition-transform hover:scale-105"
-      >
+      <h2 class="text-3xl font-semibold text-white/80 mb-2">JOIN LIVE STREAMING</h2>
+      <p class="text-white/70 max-w-xl mx-auto italic">
+        Pernikahan kami dapat disaksikan secara langsung melalui tombol di bawah ini:
+      </p>
+      <button class="bg-white/10 mt-5 backdrop-blur-sm border border-white text-white px-6 py-3 rounded-md font-semibold hover:scale-105">
         Live Streaming
       </button>
-  </div>
-
-    <div class="mb-12 text-center mt-32 px-10" data-aos="fade-in" data-aos-delay="200">
-    <h2 class="text-5xl font-semibold text-white/80 mb-2">Our Story</h2>
-    <p class="text-white/70 max-w-xl mx-auto italic">
-      Perjalanan kisah cinta kami yang penuh makna dan kebahagiaan.
-    </p>
-    <hr class="w-20 mx-auto my-6 border-t border-white/30" />
-  </div>
-
-  <div class="relative border-l border-white/40 pl-10 space-y-12 px-10 ">
-    <div class="relative" data-aos="fade-up" data-aos-delay="100">
-      <span
-        class="absolute -left-5 top-2 w-4 h-4 bg-white rounded-full border-2 border-white"
-      ></span>
-      <h3 class="text-2xl text-white/80 font-semibold">Pertemuan Pertama</h3>
-      <p class="text-sm text-white/60 mb-2">Januari 2020</p>
-      <p class="text-white/80">
-        Kami bertemu di sebuah acara komunitas seni, di mana mata kami saling bertemu untuk pertama kali.
-      </p>
     </div>
 
-    <div class="relative" data-aos="fade-up" data-aos-delay="100">
-      <span
-        class="absolute -left-5 top-2 w-4 h-4 bg-white rounded-full border-2 border-white"
-      ></span>
-      <h3 class="text-2xl text-white/80 font-semibold">Kencan Pertama</h3>
-      <p class="text-sm text-white/60 mb-2">Februari 2020</p>
-      <p class="text-white/80">
-        Kencan pertama kami di sebuah kafe kecil yang hangat, penuh cerita dan tawa sepanjang malam.
-      </p>
+    <!-- SECTION: OUR STORY -->
+    <div class="mb-12 text-center mt-32 px-10" data-aos="fade-in">
+      <h2 class="text-5xl font-semibold text-white/80 mb-2">Our Story</h2>
+      <p class="text-white/70 max-w-xl mx-auto italic">Perjalanan kisah cinta kami yang penuh makna dan kebahagiaan.</p>
+      <hr class="w-20 mx-auto my-6 border-t border-white/30" />
     </div>
 
-    <div class="relative" data-aos="fade-up" data-aos-delay="100">
-      <span
-        class="absolute -left-5 top-2 w-4 h-4 bg-white rounded-full border-2 border-white"
-      ></span>
-      <h3 class="text-2xl text-white/80 font-semibold">Pertunangan</h3>
-      <p class="text-sm text-white/60 mb-2">Desember 2024</p>
-      <p class="text-white/80">
-        Dengan bahagia kami mengikat janji untuk melangkah bersama selamanya.
-      </p>
+    <div class="relative border-l border-white/40 pl-10 space-y-12 px-10">
+      <template v-for="(item, index) in timeline" :key="index">
+        <div class="relative" data-aos="fade-up" :data-aos-delay="100 * index">
+          <span class="absolute -left-5 top-2 w-4 h-4 bg-white rounded-full border-2 border-white"></span>
+          <h3 class="text-2xl text-white/80 font-semibold">{{ item.title }}</h3>
+          <p class="text-sm text-white/60 mb-2">{{ item.date }}</p>
+          <p class="text-white/80">{{ item.desc }}</p>
+        </div>
+      </template>
     </div>
-  </div>
-    </section>
-
-
-
+  </section>
 </template>
+
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
