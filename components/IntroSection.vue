@@ -40,7 +40,7 @@ const hideIntro = ref(false)
 const guestName = ref('Tamu Undangan')
 const audio = ref(null)
 
-const musicUrl = '/music/music.mp3'
+const musicUrl = ''
 
 onMounted(() => {
   const params = new URLSearchParams(window.location.search)
