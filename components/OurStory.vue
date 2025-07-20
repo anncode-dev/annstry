@@ -15,6 +15,7 @@
       Your browser does not support the video tag.
     </video>
   </section>
+
   <section
     class="relative min-h-screen px-6 text-white overflow-hidden transition-opacity duration-700
   "
@@ -27,6 +28,33 @@
       class="absolute top-0 left-0 w-full h-full object-cover"
     >
       <source src="/video/OurStory-Two.MP4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <section class="relative py-5 bg-black text-white text-center">
+    <div>
+      <p class="font-[txt] text-4xl">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+    </div>
+    <div class="mt-6 px-10">
+      <p class="text-sm font-semibold mt-2 font-[txt]">
+        Dengan memohonkan Rahmat dan Ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir pada acara pernikahan kami.
+      </p>
+    </div>
+  </section>
+
+  <section
+    class="relative min-h-screen px-6 text-white overflow-hidden transition-opacity duration-700
+  "
+  >
+    <video
+      ref="bgVideo"
+      autoplay
+      muted
+      playsinline
+      class="absolute top-0 left-0 w-full h-full object-cover"
+    >
+      <source src="/video/Bride-One.MP4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   </section>
